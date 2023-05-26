@@ -6,6 +6,22 @@ using UnityEngine.AI;
 
 public class GameGrid : MonoBehaviour
 {
+    private static GameGrid instance;
+
+    public static GameGrid MyInstance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = FindAnyObjectByType<GameGrid>();
+            }
+
+            return instance;
+        }
+
+    }
+
     public int height, width;
 
     private NavMeshSurface navMeshSurfaces;
