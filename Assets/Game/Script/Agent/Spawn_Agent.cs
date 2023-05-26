@@ -42,7 +42,12 @@ public class Spawn_Agent : MonoBehaviour
         for (int i = 0; i < agentsInStart; i++)
         {
             agentsInMap++;
-            Instantiate(spawnerAgentPrefab, new Vector3(Random.Range((GameGrid.MyInstance.width * 0.2f), GameGrid.MyInstance.width * 0.9f), 0, Random.Range((GameGrid.MyInstance.height * 0.2f), GameGrid.MyInstance.height * 0.9f)), Quaternion.identity);
+
+            float x = Random.Range(GameGrid.MyInstance.width * 0.2f, GameGrid.MyInstance.width * 0.9f);
+            float z = Random.Range(GameGrid.MyInstance.height * 0.2f, GameGrid.MyInstance.height * 0.9f);
+
+            Instantiate(spawnerAgentPrefab, new Vector3(x, 0, z), Quaternion.identity);
+
             spawnerAgentPrefab.name = "Agent id: " + agentId++;
         }
 
@@ -54,9 +59,15 @@ public class Spawn_Agent : MonoBehaviour
         yield return new WaitForSeconds(interval);
         if (agentsInMap < maxAgentInMap)
         {
-            GameObject newEnemy = Instantiate(agent, new Vector3(Random.Range((GameGrid.MyInstance.width * 0.2f), GameGrid.MyInstance.width * 0.9f), 0, Random.Range((GameGrid.MyInstance.height * 0.2f), GameGrid.MyInstance.height * 0.9f)), Quaternion.identity);
+            float x = Random.Range(GameGrid.MyInstance.width * 0.2f, GameGrid.MyInstance.width * 0.9f);
+            float z = Random.Range(GameGrid.MyInstance.height * 0.2f, GameGrid.MyInstance.height * 0.9f);
+
+            GameObject newEnemy = Instantiate(agent, new Vector3(x, 0, z), Quaternion.identity);
+
             agent.name = "Agent id: " + agentId++;
+
             StartCoroutine(spawnEnemy(interval, agent));
+
             agentsInMap++;
         }
         else
