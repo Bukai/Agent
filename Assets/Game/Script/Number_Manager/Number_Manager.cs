@@ -27,29 +27,36 @@ public class Number_Manager : MonoBehaviour
     {
         numbersPanel.SetActive(true);
 
-        for (int i = 1; i < maxNumber; i++)
-        {
-            if (i % 3 == 0 && i % 5 != 0)
-            {
-                numbersText.text += marko + "<br>";
-            }
-            else if (i % 5 == 0 && i % 3 != 0)
-            {
-                numbersText.text += polo + "<br>";
-            }
-            else if (i % 3 == 0 && i % 5 == 0)
-            {
-                numbersText.text += marko + polo + "<br>";
-            }
-            else
-            {
-                numbersText.text += i.ToString() + "<br>";
-            }
-        }
+        Solution();
     }
 
     public void CloseNumbersPanel()
     {
         numbersPanel.SetActive(false);
+    }
+
+    private void Solution()
+    {
+        for (int i = 1; i < maxNumber; i++)
+        {
+            if (i % 3 == 0 && i % 5 != 0)
+            {
+                numbersText.text += marko;
+            }
+            else if (i % 5 == 0 && i % 3 != 0)
+            {
+                numbersText.text += polo;
+            }
+            else if (i % 3 == 0 && i % 5 == 0)
+            {
+                numbersText.text += marko + polo;
+            }
+            else
+            {
+                numbersText.text += i.ToString();
+            }
+
+            numbersText.text += "<Br>";
+        }
     }
 }
