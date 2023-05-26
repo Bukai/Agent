@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1228327296042091424}
   - component: {fileID: 6085286395154746628}
   - component: {fileID: 4103326517416095724}
+  - component: {fileID: 1490543307971890340}
   m_Layer: 0
   m_Name: Agent
   m_TagString: Untagged
@@ -35,7 +36,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7232500889439671679
 MeshFilter:
@@ -173,3 +174,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agentSpeed: 1
   radius: 4
+--- !u!114 &1490543307971890340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3834157922352487425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57c346a114d33594caee0f148de27b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeAgent: 3
