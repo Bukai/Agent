@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class Spawn_Agent : MonoBehaviour
 {
@@ -46,9 +47,9 @@ public class Spawn_Agent : MonoBehaviour
             float x = Random.Range(GameGrid.MyInstance.width * 0.2f, GameGrid.MyInstance.width * 0.9f);
             float z = Random.Range(GameGrid.MyInstance.height * 0.2f, GameGrid.MyInstance.height * 0.9f);
 
-            Instantiate(spawnerAgentPrefab, new Vector3(x, 0, z), Quaternion.identity);
+            GameObject cloneAgent = Instantiate(spawnerAgentPrefab, new Vector3(x, 0, z), Quaternion.identity);
 
-            spawnerAgentPrefab.name = "Agent id: " + agentId++;
+            cloneAgent.name = "Agent id: " + agentId++;
         }
 
         StartCoroutine(spawnEnemy(spawnerTime, spawnerAgentPrefab));
@@ -64,7 +65,7 @@ public class Spawn_Agent : MonoBehaviour
 
             GameObject newEnemy = Instantiate(agent, new Vector3(x, 0, z), Quaternion.identity);
 
-            agent.name = "Agent id: " + agentId++;
+            newEnemy.name = "Agent id: " + agentId++;
 
             StartCoroutine(spawnEnemy(interval, agent));
 
