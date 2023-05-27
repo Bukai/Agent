@@ -42,7 +42,7 @@ public class GameGrid : MonoBehaviour
 
     private void CreatGameMap()
     {
-        gameGrid = new GameObject[height, width];
+        gameGrid = new GameObject[width, height];
 
         for (int z = 0; z < height; z++)
         {
@@ -50,7 +50,7 @@ public class GameGrid : MonoBehaviour
             {
                 gameGrid[x, z] = Instantiate(gridPrefab, new Vector3(x, 0, z), Quaternion.identity);
                 gameGrid[x, z].transform.parent = transform;
-                gameGrid[x, z].gameObject.name = "Grid Space ( x: " + x.ToString() + " , Y: " + z.ToString() + ")";
+                gameGrid[x, z].gameObject.name = "Grid Space ( x: " + x.ToString() + " , Z: " + z.ToString() + ")";
             }
         }
     }
