@@ -22,6 +22,7 @@ public class GameGrid : MonoBehaviour
 
     }
 
+    [Range(5, 50)]
     public int height, width;
 
     private NavMeshSurface navMeshSurfaces;
@@ -50,7 +51,7 @@ public class GameGrid : MonoBehaviour
             {
                 gameGrid[x, z] = Instantiate(gridPrefab, new Vector3(x, 0, z), Quaternion.identity);
                 gameGrid[x, z].transform.parent = transform;
-                gameGrid[x, z].gameObject.name = "Grid Space ( x: " + x.ToString() + " , Z: " + z.ToString() + ")";
+                gameGrid[x, z].gameObject.name = "Grid Space ( X: " + x.ToString() + " , Z: " + z.ToString() + ")";
             }
         }
     }
