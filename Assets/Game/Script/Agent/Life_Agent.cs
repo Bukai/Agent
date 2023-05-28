@@ -26,10 +26,12 @@ public class Life_Agent : MonoBehaviour
     [SerializeField]
     private Material agentMaterial;
 
+    [SerializeField]
+    private float flashLenght;
+
     public int lifeAgent;
 
     private float flashCounter;
-    private float flashLenght;
 
     private bool damagebreak = false;
     private bool colorchange = true;
