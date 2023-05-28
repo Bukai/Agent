@@ -29,11 +29,9 @@ public class Life_Agent : MonoBehaviour
     public int lifeAgent;
 
     private float flashCounter;
+    private float flashLenght;
 
-    public float flashLenght;
-
-    public bool damagebreak = false;
-
+    private bool damagebreak = false;
     private bool colorchange = true;
     private bool coroutineCalled = false;
 
