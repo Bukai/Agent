@@ -547,6 +547,7 @@ MonoBehaviour:
   agentPanelInfo: {fileID: 363907814}
   agentName: {fileID: 1163081710}
   agentLifeCount: {fileID: 933877759}
+  agentPanelIsOpen: 0
 --- !u!114 &330585549
 MonoBehaviour:
   m_ObjectHideFlags: 0

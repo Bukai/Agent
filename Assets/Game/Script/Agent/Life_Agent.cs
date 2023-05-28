@@ -53,10 +53,6 @@ public class Life_Agent : MonoBehaviour
                 StartCoroutine(color());
             }
         }
-        else
-        {
-            agentSprite.material = agentMaterial;
-        }
 
         if (flashCounter <= 0)
         {
@@ -99,6 +95,7 @@ public class Life_Agent : MonoBehaviour
             yield return new WaitForSeconds(0.3f);
             agentSprite.material.color = Color.white;
             yield return new WaitForSeconds(0.3f);
+            agentSprite.material = agentMaterial;
         }
 
         coroutineCalled = false;

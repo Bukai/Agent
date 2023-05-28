@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentMaterial: {fileID: 2100000, guid: 10eb54bf117691040a235668a59019cf, type: 2}
-  lifeAgent: 3
+  selectedAgentMaterial: {fileID: 2100000, guid: 5ab52baf11e3f514fb9d3511b520e63b,
+    type: 2}
   flashLenght: 1
-  damagebreak: 0
+  lifeAgent: 3
