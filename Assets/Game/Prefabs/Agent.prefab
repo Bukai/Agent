@@ -186,4 +186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57c346a114d33594caee0f148de27b90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  agentMaterial: {fileID: 2100000, guid: 10eb54bf117691040a235668a59019cf, type: 2}
   lifeAgent: 3
+  flashLenght: 1
+  damagebreak: 0
