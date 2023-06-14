@@ -30,32 +30,37 @@ public class Clicker_Agent : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            HitAgent();
+        }
+    }
 
-            GameObject agent = GameObject.FindGameObjectWithTag("Agent");
+    private void HitAgent()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit))
+        GameObject agent = GameObject.FindGameObjectWithTag("Agent");
+
+        if (Physics.Raycast(ray, out hit))
+        {
+            var selectionAgent = hit.transform;
+            var selectionAgentRenderer = selectionAgent.GetComponent<Renderer>();
+
+            if (agentPanelIsOpen == true)
             {
-                var selectionAgent = hit.transform;
-                var selectionAgentRenderer = selectionAgent.GetComponent<Renderer>();
+                uncheckAgent();
+            }
 
-                if (agentPanelIsOpen == true)
+            if (hit.collider.CompareTag(agent.tag))
+            {
+                agentHit = hit.transform.gameObject;
+
+                if (selectionAgentRenderer != null)
                 {
-                    uncheckAgent();
+                    selectionAgentRenderer.material = selectedAgentMaterial;
                 }
 
-                if (hit.collider.CompareTag(agent.tag))
-                {
-                    agentHit = hit.transform.gameObject;
-
-                    if (selectionAgentRenderer != null)
-                    {
-                        selectionAgentRenderer.material = selectedAgentMaterial;
-                    }
-
-                    agentPanel();
-                }
+                agentPanel();
             }
         }
     }

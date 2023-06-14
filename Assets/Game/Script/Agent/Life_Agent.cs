@@ -10,6 +10,8 @@ public class Life_Agent : MonoBehaviour
     [SerializeField]
     private Material agentMaterial;
 
+    private Spawn_Agent agent;
+
     [SerializeField]
     private float flashLenght;
 
@@ -66,7 +68,7 @@ public class Life_Agent : MonoBehaviour
         {
             damagebreak = true;
             lifeAgent--;
-            Spawn_Agent.MyInstance.agentsInMap--;
+            agent.agentsInMap--;
         }
     }
 

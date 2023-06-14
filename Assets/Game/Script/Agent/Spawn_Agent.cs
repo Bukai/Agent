@@ -5,21 +5,6 @@ using UnityEngine.Rendering.Universal;
 
 public class Spawn_Agent : MonoBehaviour
 {
-    private static Spawn_Agent instance;
-
-    public static Spawn_Agent MyInstance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindAnyObjectByType<Spawn_Agent>();
-            }
-
-            return instance;
-        }
-
-    }
 
     [SerializeField]
     private GameObject spawnerAgentPrefab;
