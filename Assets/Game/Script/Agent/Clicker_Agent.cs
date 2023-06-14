@@ -45,7 +45,7 @@ public class Clicker_Agent : MonoBehaviour
                     uncheckAgent();
                 }
 
-                if (hit.collider.tag == agent.tag)
+                if (hit.collider.CompareTag(agent.tag))
                 {
                     agentHit = hit.transform.gameObject;
 
