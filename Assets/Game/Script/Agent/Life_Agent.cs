@@ -5,22 +5,6 @@ using UnityEngine;
 public class Life_Agent : MonoBehaviour
 {
 
-    private static Life_Agent instance;
-
-    public static Life_Agent MyInstance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<Life_Agent>();
-            }
-
-            return instance;
-        }
-
-    }
-
     private MeshRenderer agentSprite;
 
     [SerializeField]

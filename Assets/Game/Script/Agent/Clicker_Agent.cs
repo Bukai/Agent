@@ -5,21 +5,6 @@ using UnityEngine;
 
 public class Clicker_Agent : MonoBehaviour
 {
-    private static Clicker_Agent instance;
-
-    public static Clicker_Agent MyInstance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                instance = FindObjectOfType<Clicker_Agent>();
-            }
-
-            return instance;
-        }
-
-    }
 
     [SerializeField]
     private Material agentMaterial, selectedAgentMaterial;
